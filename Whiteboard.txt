@@ -1,0 +1,82 @@
+whiteboard
+
+--------------------------------------------------------------------------------------------------------
+
+move capitol letters to the front
+
+move all capitol letters to front 
+- keep the order of the letters the same in relation to each other
+
+input "AllGood" --> output "AGllood" 
+
+
+Solve in Javascript / may use built methods
+
+PSUEDOCODE
+
+Function (string)
+string.split("")
+loop 
+filter (regex /W/g - capitol letters) Prepend --> output []
+lowercase letters  append --> output []
+return output.join
+
+
+
+CODE - javascript
+
+
+function CapToFront(string)
+{
+    let ouputLowerCase = [];
+    let outputCaptiol = [];
+    let regEx = /[A-Z]/g;
+    let arr = string.split("");
+    for (let i =0; i<arr.length; i++)
+    {
+        if (arr[i].Match(regEx))
+        {
+            outputCapitol.push(arr[i])
+        } else outputLowerCase.push(arr[i])
+    }
+    let finalArr = outputCapitol.push(outputLowerCase);
+    return finalArr.join();
+}
+
+Input "All Good" --> ["A", "l", " "...] --> output [G, A, l, l, , o, o, d]
+
+
+whiteboard on : 2/2/2021---------------------------------------------------------------------------------------
+
+funciton calculate number of diff squares in nxn grid
+
+input always positive
+                                i
+                                /\
+square is a pyramidal number; /___\
+****
+****
+****
+****
+example : input= 2 --> return = 5 squares
+input =4 --> return = 30 squares;
+input =5 --> return = 55 squares;
+
+(4*4)-1)*2 = 30
+
+(2*2)-1)*2
+
+n*n = base layer
+(n-1)*(n-1)= every ascending layer
+
+
+function numberOfSquares(n, count=0){
+    if(n>0){
+        const sum = count+(n*n);
+        return numberOfSquares(n-1, sum);
+    } else
+    {
+        return count;
+    }
+}
+----------------------------------------------------------------------------------------------------------

@@ -1,0 +1,45 @@
+whiteboard promt #5:
+
+write function that sorts array without using sort();
+
+may use any algorhythym. 
+
+
+
+//PLANNING
+bubble sort:
+
+find the highest value in the array
+loop-->
+    if(arr[i] > arr[i+1]){
+    }
+Math.max(arr);
+
+move it to the end of the array
+arr[i] = arr[arr.length-1]
+
+do it again
+
+
+
+    let bigNum = Math.max(arr);
+//CODE
+
+
+input = [9,2,7,12]; whole numbers, positive
+output = [2,7,9,12];
+
+
+function sorted(arr, count=0, out = []){ 
+    if(count >= arr.length){
+        let bigNum = Math.max(arr);  
+        out.push(bigNum);
+        let newArr = arr.pop(bigNum);
+        count++;
+        sorted(newArr, count, out);
+    } else {return out;}
+}
+
+
+
+
