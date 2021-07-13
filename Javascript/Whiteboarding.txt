@@ -30,16 +30,26 @@ input = [9,2,7,12]; whole numbers, positive
 output = [2,7,9,12];
 
 
-function sorted(arr, count=0, out = []){ 
-    if(count <= arr.length){
-        let bigNum = Math.max(arr);  
-        out.push(bigNum);
-        let newArr = arr.pop(bigNum);
-        count++;
-        sorted(newArr, count, out);
-    } else {return out;}
+function sorted3(arr, out = []){ 
+    console.log('start')
+    if(arr.length >= 1){
+      // console.log(count)
+      console.log(arr)
+      let bigNum = Math.max(...arr);  
+      out.push(bigNum);
+      arr.splice(arr.indexOf(bigNum), 1);
+      let newArr = arr;
+      console.log(out + " " + 'Out before loop')
+      console.log(arr + " " + "array before loop")
+      sorted3(newArr, out);
+      return out;
+    } else if(arr.length < 1){
+      console.log(out)
+      return arr;
+      console.log(arr + " " + "array")
+    }
 }
 
-
+//https://stackoverflow.com/questions/30386685/why-would-a-return-be-undefined-but-console-log-return-an-int see stack overflow for getting 'undefined' as return even thoguh consol.log() works at line 47. 
 
 
