@@ -31,7 +31,7 @@ output = [2,7,9,12];
 
 
 function sorted(arr, count=0, out = []){ 
-    if(count >= arr.length){
+    if(count <= arr.length){
         let bigNum = Math.max(arr);  
         out.push(bigNum);
         let newArr = arr.pop(bigNum);
